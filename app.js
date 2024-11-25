@@ -146,9 +146,22 @@ app.get('/filmes/:id', (req, res) => {
     res.status(404).json({ mensagem: 'Filme não encontrado' });
   }
 });
+//buscar filmes pelo nome
+app.get('/filmes/nome/:titulo', (req, res) => {
+  const titulo = req.params.titulo.toLowerCase(); // Converte o título para minúsculas para comparação
+  const filmesEncontrados = filmes.filter(f =>
+    f.titulo_filme.toLowerCase().includes(titulo) // Verifica se o título contém o termo buscado
+  );
 
-// adicionar filme / atribuir ID automatico 
-// Adicionar filme com verificação para duplicidade
+  if (filmesEncontrados.length > 0) {
+    res.json(filmesEncontrados); // Retorna os filmes encontrados
+  } else {
+    res.status(404).json({ mensagem: 'Nenhum filme encontrado com esse título.' });
+  }
+});
+
+
+//aqui eu adiciono o filme, o ID é atribuido automaticamente e ainda existe a verificação se o filme já foi adicionado anteriormente.
 app.post('/filmes', (req, res) => {
   const novoFilme = req.body;
   const filmeExistente = filmes.find(f => f.titulo_filme === novoFilme.titulo_filme && f.ano_lancamento === novoFilme.ano_lancamento);
@@ -175,7 +188,7 @@ app.put('/filmes/:id', (req, res) => {
   }
 });
 
-// Metodo para deletar
+// deletar
 app.delete('/filmes/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const index = filmes.findIndex(f => f.id === id);
