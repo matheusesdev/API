@@ -1,6 +1,6 @@
-O código JavaScript fornecido configura um servidor Express.js para gerenciar uma coleção de filmes. Ele usa os módulos express e cors para lidar com requisições HTTP e habilitar o Cross-Origin Resource Sharing, respectivamente. O servidor escuta na porta 3000.
 
-A lista filmes contém uma coleção de objetos de filmes, cada um com propriedades como id, titulo_filme, idioma, duracao, atores_principais, plataformas, poster, ano_lancamento, avaliacao e sinopse.
+
+A lista filmes contém uma coleção de objetos de filmes, cada um com propriedades como id, titulo_filme, idioma, duracao, atores_principais, plataformas, poster, ano_lancamento, avaliação e sinopse.
 
 O servidor define várias rotas para interagir com os dados dos filmes:
 
