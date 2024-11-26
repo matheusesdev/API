@@ -11,8 +11,6 @@ Esta API permite gerenciar uma lista de filmes, possibilitando operações de le
 5. PUT /filmes/:id: Atualiza um filme existente pelo seu id. Se o filme for encontrado, mescla os dados existentes do filme com os novos dados do corpo da requisição e retorna uma mensagem de sucesso. Se o filme não for encontrado, retorna um status 404 com a mensagem "Filme não encontrado".
 6. DELETE /filmes/:id: Deleta um filme pelo seu id. Se o filme for encontrado, remove-o da lista e retorna uma mensagem de sucesso. Se o filme não for encontrado, retorna um status 404 com a mensagem "Filme não encontrado".
 
-Finalmente, o servidor começa a escutar na porta especificada e exibe uma mensagem indicando que a API está rodando.
-
 Tecnologias Utilizadas:
 Node.js: Ambiente de execução JavaScript.
 Express.js: Framework para criar APIs RESTful.
@@ -30,13 +28,7 @@ Informações SOBRE O CÓDIGO JS:
 
 5. A função `getPlatformIcon` retorna uma string HTML contendo uma tag de âncora com uma imagem do ícone da plataforma. Ela recebe um nome de plataforma como entrada, determina a URL do ícone apropriado e o link com base no nome da plataforma, e retorna a string HTML. Se o nome da plataforma não for reconhecido, ela retorna um ícone de espaço reservado com um link para `#`.
 
-Endpoints:
-Listar todos os filmes - http://localhost:3000/filmes
-Pesquisar filme pelo id - http://localhost:3000/filmes/2
-Pesquisar pelo “nome” = http://localhost:3000/filmes/nome/parasita
-Incluir objeto novo = método post http://localhost:3000/filmes (colar o script do filme que está no whatsapp)
-Alterar um objeto = metodo put http://localhost:3000 (alterar alguma informação do filme, colocar ID ou nome do filme.)
-Deletar um objeto = metodo delete http://localhost:3000/filmes
+Filmes que estão na API
 
 1. Parasita
 2. A vida é bela
